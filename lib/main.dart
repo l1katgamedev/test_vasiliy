@@ -39,9 +39,9 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: '/',
         routes: {
-          '/': (context) => Wrapper(),
-          '/login': (context) => LoginScreen(),
-          '/register': (context) => RegisterScreen(),
+          '/': (context) => const Wrapper(),
+          '/login': (context) => const LoginScreen(),
+          '/register': (context) => const RegisterScreen(),
         },
       ),
     );

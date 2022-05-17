@@ -24,7 +24,6 @@ class _NewsBlockWidgetState extends State<NewsBlockWidget> {
     if (records.isEmpty) {
       return const Center(
         child: Text("Нет записей"),
-
       );
     } else {
       return ListView.builder(
@@ -55,34 +54,38 @@ class _NewsBlockWidgetState extends State<NewsBlockWidget> {
                                 SizedBox(
                                   child: isSaved
                                       ? IconButton(
-                                    onPressed: () {
-                                      setState(() {
-                                        BlocProvider.of<SavedBloc>(context)
-                                            .add(SavedRemoveEvent(record));
-                                      });
-                                    },
-                                    icon: const Icon(
-                                      Icons.favorite,
-                                      color: Colors.white,
-                                    ),
-                                  )
+                                          onPressed: () {
+                                            setState(() {
+                                              BlocProvider.of<SavedBloc>(
+                                                      context)
+                                                  .add(
+                                                      SavedRemoveEvent(record));
+                                            });
+                                          },
+                                          icon: const Icon(
+                                            Icons.favorite,
+                                            color: Colors.white,
+                                          ),
+                                        )
                                       : IconButton(
-                                    onPressed: () {
-                                      setState(() {
-                                        BlocProvider.of<SavedBloc>(context)
-                                            .add(SavedSaveEvent(record));
-                                      });
-                                    },
-                                    icon: const Icon(
-                                      Icons.favorite_border,
-                                      color: Colors.white,
-                                    ),
-                                  ),
+                                          onPressed: () {
+                                            setState(() {
+                                              BlocProvider.of<SavedBloc>(
+                                                      context)
+                                                  .add(SavedSaveEvent(record));
+                                            });
+                                          },
+                                          icon: const Icon(
+                                            Icons.favorite_border,
+                                            color: Colors.white,
+                                          ),
+                                        ),
                                 ),
                                 Positioned(
                                   bottom: 10,
                                   child: Container(
-                                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 10),
                                     width: MediaQuery.of(context).size.width,
                                     decoration: BoxDecoration(
                                       boxShadow: [
@@ -90,8 +93,8 @@ class _NewsBlockWidgetState extends State<NewsBlockWidget> {
                                           color: Colors.black.withOpacity(0.6),
                                           spreadRadius: 10,
                                           blurRadius: 14,
-                                          offset:
-                                          Offset(0, 10), // changes position of shadow
+                                          offset: Offset(0,
+                                              10), // changes position of shadow
                                         ),
                                       ],
                                     ),
@@ -166,9 +169,6 @@ class _NewsBlockWidgetState extends State<NewsBlockWidget> {
                         ),
                       ),
                     ],
-                  ),
-                  Row(
-                    children: [],
                   ),
                 ],
               ),

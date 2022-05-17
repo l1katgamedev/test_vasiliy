@@ -14,7 +14,7 @@ class LoginScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Логин'),
+        title: const Text('Логин'),
         backgroundColor: Colors.black87,
       ),
       body: Column(
@@ -24,7 +24,7 @@ class LoginScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               controller: emailController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: "Email",
               ),
             ),
@@ -33,7 +33,7 @@ class LoginScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               controller: passwordController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: "Password",
               ),
             ),
@@ -43,13 +43,13 @@ class LoginScreen extends StatelessWidget {
               authService.signInWithEmailAndPassword(
                   emailController.text, passwordController.text);
             },
-            child: Text('Login'),
+            child: const Text('Login'),
           ),
           ElevatedButton(
             onPressed: () {
               Navigator.pushNamed(context, '/register');
             },
-            child: Text('Register'),
+            child: const Text('Register'),
           ),
         ],
       ),

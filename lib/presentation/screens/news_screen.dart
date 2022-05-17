@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:test_vasiliy/data/datasources/auth_service.dart';
 import 'package:test_vasiliy/presentation/bloc/news/news_bloc.dart';
+import 'package:test_vasiliy/presentation/screens/login_screen.dart';
 import 'package:test_vasiliy/presentation/screens/profile_screen.dart';
-import 'package:test_vasiliy/presentation/screens/saved_news_screen.dart';
 import 'package:test_vasiliy/presentation/widgets/news_block_widget.dart';
 
 class NewsScreen extends StatefulWidget {
@@ -39,6 +39,9 @@ class _NewsScreenState extends State<NewsScreen> {
                 icon: const Icon(Icons.person)),
             IconButton(
               onPressed: () async {
+                Navigator.popAndPushNamed(
+                  context, '/login'
+                );
                 await authService.signOut();
               },
               icon: const Icon(Icons.exit_to_app),

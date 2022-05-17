@@ -13,7 +13,7 @@ class RegisterScreen extends StatelessWidget {
     final authServvice = Provider.of<AuthService>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Register'),
+        title: const Text('Register'),
         backgroundColor: Colors.black87,
       ),
       body: Column(
@@ -23,7 +23,7 @@ class RegisterScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               controller: emailController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: "Email",
               ),
             ),
@@ -32,7 +32,7 @@ class RegisterScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: TextField(
               controller: passwordController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: "Password",
               ),
             ),
@@ -42,7 +42,7 @@ class RegisterScreen extends StatelessWidget {
              await authServvice.createUserWithEmailAndPassword(emailController.text, passwordController.text);
               Navigator.pushNamed(context, '/login');
             },
-            child: Text('Register'),
+            child: const Text('Register'),
           ),
         ],
       ),
